@@ -1,12 +1,25 @@
 import React from 'react'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Dashboard from './pages/Dashboard';
+import Contact from './pages/Contact';
+import Header from './components/Header';
 function App() {
   return (
-    <div className="w-full h-screen bg-zinc-900 p-4">
-    <div className="w-44 h-32 rounded-xl bg-red-600 p-3 text-white">
-      <h3>hello</h3>
-    </div>
-    </div>
+    <BrowserRouter> 
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
